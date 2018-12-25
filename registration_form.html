@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title> Registration Form </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+    <body>
+    <div class="login-box">
+    <!-- <img src="avatar.png" class="avatar"> -->
+        <h1>Login Here</h1>
+        <h1 class="login">You have logged in successfully</h1>
+            <form>
+            <p>Name</p>
+            <input type="text" name="username" placeholder="Enter your name">
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter Username">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter Password">
+            <p>DOB</p>
+            <input type="date" placeholder="myDate">
+            <p>Gender</p>
+            <input type="radio" name="gender" value="female"><span>Female</span>
+            <input type="radio" name="gender" value="male"><span>Male</span>
+            <input type="radio" name="gender" value="other"><span>Other</span></br>
+
+            <input id="lb" type="submit" onclick="toggle" name="submit"  value="Login">
+            <a href="#">Forget Password</a>
+            </form>
+
+
+        </div>
+        <script>
+          function toggle() {
+            document.getElementById('lb').style.display = "block";
+            // loginButton.style.display = "none";="block";
+
+          }
+        </script>
+
+    </body>
+</html>

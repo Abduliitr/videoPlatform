@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 5, CSS 3, jQuery Log-in & Registration</title>
+link href='http://fonts.googleapis.com/css?family=Varela+Round|Open+Sans:400,300,600' rel='stylesheet' type='text/css'
+script src="http://code.jquery.com/jquery-latest.min.js"/script
+script
+$(document).ready(function() {
+    $("#loginLink").click(function( event ){
+           event.preventDefault();
+           $(".overlay").fadeToggle("fast");
+     });
+
+    $(".overlayLink").click(function(event){
+        event.preventDefault();
+        var action = $(this).attr('data-action');
+
+        $("#loginTarget").load("ajax/" + action);
+
+        $(".overlay").fadeToggle("fast");
+    });
+
+    $(".close").click(function(){
+        $(".overlay").fadeToggle("fast");
+    });
+
+    $(document).keyup(function(e) {
+        if(e.keyCode == 27 && $(".overlay").css("display") != "none" ) {
+            event.preventDefault();
+            $(".overlay").fadeToggle("fast");
+        }
+    });
+});
+/script
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-wp-preserve="%3Cstyle%3E%0A%2F*%3Cbr%20%2F%3E%0A*%20%20%20%20RESET%3Cbr%20%2F%3E%0A*%2F%3Cbr%20%2F%3E%0A*%7B%3Cbr%20%2F%3E%0A%20%20%20%20box-sizing%3A%20border-box%3B%3Cbr%20%2F%3E%0A%20%20%20%20margin%3A%200%3B%3Cbr%20%2F%3E%0A%20%20%20%20outline%3A%20none%3B%3Cbr%20%2F%3E%0A%20%20%20%20padding%3A%200%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3E*%3Aafter%2C%3Cbr%20%2F%3E%0A*%3Abefore%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20box-sizing%3A%20border-box%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3E%2F*%3Cbr%20%2F%3E%0A*%20%20%20%20GLOBAL%3Cbr%20%2F%3E%0A*%2F%3Cbr%20%2F%3E%0Ahtml%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20font-size%3A%2016px%3B%3Cbr%20%2F%3E%0A%20%20%20%20-webkit-text-size-adjust%3A%20100%25%3B%3Cbr%20%2F%3E%0A%20%20%20%20-ms-text-size-adjust%3A%20100%25%3B%3Cbr%20%2F%3E%0A%20%20%20%20text-rendering%3A%20optimizeLegibility%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3Ebody%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20background-color%3A%20%23f3f3f3%3B%3Cbr%20%2F%3E%0A%20%20%20%20color%3A%20rgb(165%2C165%2C165)%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-family%3A%20%22Open%20Sans%22%2C%20Arial%2C%20Helvetica%2C%20sans-serif%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-weight%3A%20400%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3Ea.close%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20background-color%3A%20rgb(204%2C204%2C204)%3B%3Cbr%20%2F%3E%0A%20%20%20%20border-radius%3A%2050%25%3B%3Cbr%20%2F%3E%0A%20%20%20%20color%3A%20rgb(255%2C255%2C255)%3B%3Cbr%20%2F%3E%0A%20%20%20%20display%3A%20block%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-family%3A%20'Varela%20Round'%2C%20sans-serif%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-size%3A%20.8em%3B%3Cbr%20%2F%3E%0A%20%20%20%20padding%3A%20.2em%20.5em%3B%3Cbr%20%2F%3E%0A%20%20%20%20position%3A%20absolute%3B%3Cbr%20%2F%3E%0A%20%20%20%20top%3A%201.25rem%3B%3Cbr%20%2F%3E%0A%20%20%20%20transition%3A%20all%20400ms%20ease%3B%3Cbr%20%2F%3E%0A%20%20%20%20right%3A%201.25rem%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20a.close%3Ahover%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20background-color%3A%20%231bc5b3%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%3Cbr%20%2F%3E%0A%20%20%20%20%7D%3C%2Fp%3E%0A%3Cp%3E%2F*%3Cbr%20%2F%3E%0A*%20%20%20%20LOG-IN%20BOX%3Cbr%20%2F%3E%0A*%2F%3Cbr%20%2F%3E%0Adiv.overlay%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20background-color%3A%20rgba(0%2C0%2C0%2C.25)%3B%3Cbr%20%2F%3E%0A%20%20%20%20bottom%3A%200%3B%3Cbr%20%2F%3E%0A%20%20%20%20display%3A%20flex%3B%3Cbr%20%2F%3E%0A%20%20%20%20justify-content%3A%20center%3B%3Cbr%20%2F%3E%0A%20%20%20%20left%3A%200%3B%3Cbr%20%2F%3E%0A%20%20%20%20position%3A%20fixed%3B%3Cbr%20%2F%3E%0A%20%20%20%20top%3A%200%3B%3Cbr%20%2F%3E%0A%20%20%20%20width%3A%20100%25%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20div.overlay%20%3E%20div.login-wrapper%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20align-self%3A%20center%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20background-color%3A%20rgba(0%2C0%2C0%2C.25)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20border-radius%3A%202px%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20padding%3A%206px%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20width%3A%20450px%3B%3Cbr%20%2F%3E%0A%20%20%20%20%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20%20%20%20%20div.overlay%20%3E%20div.login-wrapper%20%3E%20div.login-content%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20background-color%3A%20rgb(255%2C255%2C255)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20border-radius%3A%202px%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%2024px%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20position%3A%20relative%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20%20%20%20%20%20%20%20%20div.overlay%20%3E%20div.login-wrapper%20%3E%20div.login-content%20%3E%20h3%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20color%3A%20rgb(0%2C0%2C0)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-family%3A%20'Varela%20Round'%2C%20sans-serif%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20font-size%3A%201.8em%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20margin%3A%200%200%201.25em%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20padding%3A%200%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%3Cbr%20%2F%3E%0A%2F*%3Cbr%20%2F%3E%0A*%20%20%20%20FORM%3Cbr%20%2F%3E%0A*%2F%3Cbr%20%2F%3E%0Aform%20label%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20color%3A%20rgb(0%2C0%2C0)%3B%3Cbr%20%2F%3E%0A%20%20%20%20display%3A%20block%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-family%3A%20'Varela%20Round'%2C%20sans-serif%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-size%3A%201.25em%3B%3Cbr%20%2F%3E%0A%20%20%20%20margin%3A%20.75em%200%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20form%20input%5Btype%3D%22text%22%5D%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22email%22%5D%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22number%22%5D%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22search%22%5D%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22password%22%5D%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20textarea%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20background-color%3A%20rgb(255%2C255%2C255)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20border%3A%201px%20solid%20rgb(%20186%2C%20186%2C%20186%20)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20border-radius%3A%201px%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20box-shadow%3A%20inset%200%201px%202px%20rgba(0%2C%200%2C%200%2C%200.08)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20display%3A%20block%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20font-size%3A%20.65em%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20margin%3A%206px%200%2012px%200%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20padding%3A%20.8em%20.55em%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20text-shadow%3A%200%201px%201px%20rgba(255%2C%20255%2C%20255%2C%201)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20transition%3A%20all%20400ms%20ease%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20width%3A%2090%25%3B%3Cbr%20%2F%3E%0A%20%20%20%20%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20form%20input%5Btype%3D%22text%22%5D%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22email%22%5D%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22number%22%5D%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22search%22%5D%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20input%5Btype%3D%22password%22%5D%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20textarea%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20form%20select%3Afocus%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20border-color%3A%20%234195fc%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20box-shadow%3A%20inset%200%201px%202px%20rgba(0%2C%200%2C%200%2C%200.1)%2C%200%200%208px%20%234195fc%3B%3Cbr%20%2F%3E%0A%20%20%20%20%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20%20%20%20%20form%20input%5Btype%3D%22text%22%5D%3Ainvalid%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20form%20input%5Btype%3D%22email%22%5D%3Ainvalid%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20form%20input%5Btype%3D%22number%22%5D%3Ainvalid%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20form%20input%5Btype%3D%22search%22%5D%3Ainvalid%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20form%20input%5Btype%3D%22password%22%5D%3Ainvalid%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20form%20textarea%3Ainvalid%3Afocus%2C%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20form%20select%3Ainvalid%3Afocus%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20border-color%3A%20rgb(248%2C66%2C66)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20box-shadow%3A%20inset%200%201px%202px%20rgba(0%2C%200%2C%200%2C%200.1)%2C%200%200%208px%20rgb(248%2C66%2C66)%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20%7D%3C%2Fp%3E%0A%3Cp%3Eform%20button%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20background-color%3A%20%2350c1e9%3B%3Cbr%20%2F%3E%0A%20%20%20%20border%3A%201px%20solid%20rgba(0%2C0%2C0%2C.1)%3B%3Cbr%20%2F%3E%0A%20%20%20%20color%3A%20rgb(255%2C255%2C255)%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-family%3A%20'Varela%20Round'%2C%20sans-serif%3B%3Cbr%20%2F%3E%0A%20%20%20%20font-size%3A%20.85em%3B%3Cbr%20%2F%3E%0A%20%20%20%20padding%3A%20.55em%20.9em%3B%3Cbr%20%2F%3E%0A%20%20%20%20transition%3A%20all%20400ms%20ease%3B%3Cbr%20%2F%3E%0A%7D%3C%2Fp%3E%0A%3Cp%3E%20%20%20%20form%20button%3Ahover%20%7B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20background-color%3A%20%231bc5b3%3B%3Cbr%20%2F%3E%0A%20%20%20%20%20%20%20%20cursor%3A%20pointer%3B%3Cbr%20%2F%3E%0A%20%20%20%20%7D%3Cbr%20%2F%3E%0A%3C%2Fstyle%3E" data-mce-resize="false" data-mce-placeholder="1" class="mce-object" width="20" height="20" alt="&lt;style&gt;" title="&lt;style&gt;" />
+
+</head>
+
+<body>
+<div class="test"></div>
+
+Here's some content.
+
+<a href="login.php" id="loginLink">Login</a>
+<ul>
+<li><a href="login.php" class="overlayLink" data-action="login-form.html">Log-in</a></li>
+<li><a href="register.php" class="overlayLink" data-action="registration-form.html">Register</a></li>
+</ul>
+<div class="overlay" style="display: none;">
+<div class="login-wrapper">
+<div class="login-content" id="loginTarget">
+            <a class="close">x</a>
+<h3>Sign in</h3>
+<form method="post" action="login.php">
+                <label for="username">
+                    Username:
+                    <input type="text" name="username" id="username" placeholder="Username must be between 8 and 20 characters" pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{8,20}$" required />
+                </label>
+                <label for="password">
+                    Password:
+                    <input type="password" name="password" id="password" placeholder="Password must contain 1 uppercase, lowercase and number" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required />
+                </label>
+                <button type="submit">Sign in</button>
+            </form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

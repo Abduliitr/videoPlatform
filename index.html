@@ -1,0 +1,277 @@
+<!-- TODO:
+           1) once the user has entered username and password it should
+              check database and allow if correct else deny by suggsting him to register
+           2) The person is able to access the course only if he is logged in
+              else the login form should pop up
+            **You need to work only at the login form section
+            **For your convienience I have written "todo" near that section also
+   -->
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Video platform</title>
+  <!-- Main Styling  -->
+  <link href="css/main.css" rel="stylesheet">
+
+  <!-- favicon -->
+  <link rel="icon" href="img/replay.gif" type="image/gif" sizes="16x16">
+
+  <!-- Bootstrap -->
+  <link href="videoSite/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome icons -->
+  <link href="videoSite/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+  <!-- Open sans -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+
+  <!-- Videos css -->
+  <!-- Bootstrap Core CSS -->
+  <link rel="stylesheet" href="videoSite/css/bootstrap.min.css" type="text/css">
+
+  <!-- Custom Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="videoSite/font-awesome/css/font-awesome.min.css" type="text/css">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="videoSite/css/animate.min.css" type="text/css">
+
+  <!-- Custom CSS -->
+  <!-- <link rel="stylesheet" href="videoSite/css/main.css" type="text/css"> -->
+  <link rel="stylesheet" href="videoSite/css/newagt.css" type="text/css">
+
+
+</head>
+<body>
+  
+
+    <!-- <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand">Navbar</a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </nav> -->
+<header>
+    <div class="container-fluid" style="position: fixed;width:100%; background-color: rgb(101, 219, 255);top: 0%;padding-top:20px;z-index: 10;">
+      <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-3">
+        <!-- <img class="img-fluid" width="30" height="30" src="logo.png" alt=""> -->
+        </div><!-- End of logo div -->
+        <div class="col-lg-5 col-md-5 col-sm-9">
+          <form><input type="text" placeholder="Search here..." style="margin:0px;" class="form-control mr-sm-2"></form>
+        </div><!--End of Search bar -->
+        <div class="col-lg-5 col-md-5 col-sm-12">
+          <ul id="user-info">
+            
+              <li><a href="#contact" class="button btn-primary btn-xl page-scroll">Contact</a></li>
+            <li><a href="videoSite/index.html" class="button">Courses</a></li>
+            
+            <li>
+                <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="button"><i class="fa fa-user" aria-hidden="true"></i> Login</a>
+              
+            </li>
+          </ul>
+        </div><!-- Login Section -->
+      </div>
+    </div>
+  </header><!--End of header -->
+  <hr>
+<div id="new">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <section id="main" style="padding-top:70px;padding-bottom:70px;">
+        <p>Intro about the Website :: <br />
+        The website is of Video.
+        Here u will find all the videos which r related to sports, politics, shopping and about other various things.
+        (please add whatever u want to add in this.)</p>
+        </section>
+      </div>
+        
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <aside class="side_box">
+          <img  src="img/replay.gif" alt="gif image">
+          <img style="margin-top:5px" src="img/learn.gif" alt="gif image">
+        </aside>
+      </div>  
+    </div>    
+  </div>
+</div><!-- video into-->
+<!------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------>
+<!-- TODO:
+           1) once the user has entered username and password it should
+              check database and allow if correct else deny by suggsting him to register
+           2) The person is able to access the course only if he is logged in            
+              else the login form should pop up
+   -->
+<!------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------->
+
+<!-- login form -->
+<div id="id01" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img/profile.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container" style="margin:2px 5px">
+      <label for="uname"><b>Username</b></label></br>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+    </br>
+      <label for="psw"><b>Password</b></label></br>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button></br>
+
+      <div class="register" style="margin:10px">
+        <a href="registration_form.html">Register Here</a>
+      </div>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1; width: auto">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div> <!-- End of login form -->
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+<!-- Contact section -->
+<section id="contact" style="padding-top:80px; padding-bottom:70px;margin-top:5px;width: 100%;">
+	<div class="cnt_us">
+		<p>Contact Us.</p>
+	</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <form>
+                	<div class="control-group form-group">
+                		<input type="text"  name="name" placeholder="Name" required>
+                	</div>
+                	<div class="control-group form-group">
+                		<input type="email"  name="email" placeholder="Email" required="">
+                	</div>
+                	<div class="control-group form-group">
+                		<input type="number"  name="mobile" placeholder="mobile" required="">
+                	</div>
+
+                	<div class="control-group form-group">
+                		<textarea placeholder="Message" required></textarea>
+                	</div>
+                	<div class="control-group form-group">
+                		<input class="btn btn-danger" type="submit" value="send" name="">
+                	</div>
+                </form>
+            </div>
+        <div class="address col-lg-6">
+        	    <div class="">
+        			<h1>A.B. Courses</h1>
+        			<p>Our's is a framework which helps you enjoy the learning process and makes study more effective! Just fill the form below and start going, on the ladders to success!</p>
+        		</div>
+        	<div >
+        		<div>
+        			<i class="fa fa-map-marker" style="width:30px"></i>
+        			Mumbai, India.
+        		</div>
+        		<div>
+        			<i class="fa fa-phone" style="width:30px"></i>
+        			Phone: +91 7667883476 / 8435643479
+        		</div>
+        		<div>
+        			<i class="fa fa-envelope" style="width:30px"> </i>
+        			Email: abc@gmail.com
+        		</div>
+
+        	<div class="icon">
+            <a href="https://twitter.com/" class="social-ico">
+                <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".4s"></i>
+
+            </a>
+            <a href="mailto:abc@gmail.com" class="social-ico">
+            <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".8s"></i>
+
+            </a>
+            <a href="https://facebook.com/" class="social-ico">
+            <i class="fa fa-facebook fa-3x wow bounceIn" data-wow-delay="1.2s"></i>
+            </a>
+
+            </a>
+            <a href="https://instagram.com/" class="social-ico">
+            <i class="fa fa-instagram fa-3x wow bounceIn" data-wow-delay="1.6s"></i>
+            </a>
+
+
+        </div>
+    </div>
+    </div>
+
+
+    </div>
+</section>
+
+<!-- jQuery -->
+<script src="videoSite/js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="videoSite/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="videoSite/js/jquery.easing.min.js"></script>
+<script src="videoSite/js/jquery.fittext.js"></script>
+<script src="videoSite/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="videoSite/js/creative.js"></script>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; <a href="#" target="_blank">Video Courses</a> , 2018</span>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="#">Privacy Policy</a>
+                    </li>
+                    <li><a href="#">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
